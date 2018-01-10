@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function magic_multiply(x, y) {
+    		if (typeof (x) == "number" && typeof (y) == "number") {
+    		    return x * y
+    		} else if (typeof (x) == "string" && typeof (y) == "number") {
+    		    if (typeof (y) == "number") {
+    		        var mystring = "";
+    		        for (var i = 0; i < y; i++) {
+    		            mystring += x;
+    		        }
+    		        x = mystring;
+    		    }
+    		} else if (typeof (x) == "string" || typeof (y) == "string") {
+    		    return "invalid string input";
+    		} else if (x.length) {
+    		    for (var a = 0; a < x.length; a++) {
+    		        x[a] = x[a] * y;
+    		    }
+    		}
+
+    	return x;
+		};
+		test1 = magic_multiply(5, 2);
+		console.log(test1)
+		test2 = magic_multiply(0, 0);
+		console.log(test2)
+		test3 = magic_multiply([1, 2, 3], 2)
+		console.log(test3)
+		test4 = magic_multiply(7, "three");
+		console.log(test4)
+		test5 = magic_multiply("Brendo", 4);
+		console.log(test5)
+	</script>
+	
+</body>
+</html>
